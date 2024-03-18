@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ContosoUniversity.Models.SchoolViewModels.EnrollmentDateGroup>
+
+@{
+    ViewData["Title"] = "Student Body Statistics";
+}
+
+<h2>About AU</h2>
+<p>
+    Adeola University is a leading institution of higher learning situated in Lokoja, Nigeria. Renowned for its commitment to academic excellence and innovation, the university offers a diverse range of programs designed to empower students with the knowledge and skills needed to thrive in today's competitive world. With a vibrant campus culture, state-of-the-art facilities, and a dedicated faculty, Lokoja University provides an enriching educational experience that prepares students for successful careers and lifelong learning.
+</p>
+
+<h2>Student Body Statistics</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Enrollment Date</th>
+            <th>Students</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.EnrollmentDate)</td>
+                <td>@item.StudentCount</td>
+            </tr>
+        }
+    </tbody>
+</table>
